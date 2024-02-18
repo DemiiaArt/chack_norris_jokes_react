@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Main from './containers/Main.jsx'
+import WrapMenu from './components/WrapMenu.jsx'
+import Favourites from './containers/Favourites';
+
+import './style/_normalise.scss'
+import './style/_base.scss'
+import './style/_icomon.scss'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <main>
+        <Main /> 
+        <WrapMenu />
+        <Favourites />
+      </main>
     </div>
   );
 }
