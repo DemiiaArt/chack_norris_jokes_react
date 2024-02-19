@@ -1,0 +1,22 @@
+@import '../../style/variables.scss';
+
+#getAJoke {
+    color: $white;
+    line-height: $btn-lh;
+    font-weight: $btn-fw;
+    font-size: $btn-fs;
+    cursor: pointer;
+
+    padding: 10px 40px;
+    background: $button_bg;
+    border-radius: $btn-brgrad;
+    border: none;
+
+    &:hover {
+        background: $button_bg-focus;
+    }
+
+    &:active {
+        background: $button_bg-active;
+    }
+}

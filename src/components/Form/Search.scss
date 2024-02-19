@@ -1,0 +1,30 @@
+@import '../../style/variables.scss';
+
+
+.searchindField {
+    display: block;
+    width: 100%;
+    outline: 2px solid $text_lite;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 20px 0;
+
+    // position: absolute;
+    // top: 350px;
+    // left: -100%;
+
+    transition: width 300ms ease-in-out;
+
+    &::placeholder {
+        color: $text_lite;
+    }
+
+    &:focus {
+        outline: 2px solid $text;
+    }
+
+    // &.chooseVisible {
+    //     position: static;
+    //     width: 100%;
+    // }
+}

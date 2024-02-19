@@ -3,6 +3,6 @@ import './GetJoke.scss'
 
 export default function GetJoke() {
   return (
-    <div>GetJoke</div>
+    <button type='submit' id="getAJoke">Get a joke</button>
   )
 }

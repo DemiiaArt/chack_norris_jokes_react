@@ -5,7 +5,7 @@ import IconHeartBtn from '../Buttons/IconHeartBtn.jsx'
 export default function Card() {
   return (
     <li className="card">
-      <div classNmae="jokeIcon">
+      <div className="jokeIcon">
         <img src="./img/jokeIcon.png" alt="joke icon" width="20" height="18" />
       </div>
       <div className="card__body">
