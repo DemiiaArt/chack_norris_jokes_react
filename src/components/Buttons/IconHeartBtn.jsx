@@ -1,8 +1,19 @@
-import React from 'react'
-import './IconHeartBtn.scss'
+import React, { useState } from "react";
+import "./IconHeartBtn.scss";
 
-export default function IconHeartBtn() {
+export default function IconHeartBtn({jokeLiked, liftLike }) {
+  const [like, setLike] = useState(jokeLiked);
+
+  const handleChengeLike = () => {
+    const updatedLike = !like;
+    setLike(updatedLike);
+    liftLike(updatedLike);
+  };
   return (
-    <button className="icon-heart" id="likeIcon"></button>
-  )
+    <button
+      onClick={handleChengeLike}
+      className={like ? "icon-heart" : "icon-Vector"}
+      id="likeIcon"
+    ></button>
+  );
 }

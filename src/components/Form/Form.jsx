@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import "./Form.scss";
 import Categories from "./Categories.jsx";
 import Search from "./Search.jsx";
 import GetJoke from "../Buttons/GetJoke.jsx";
 // import {submitHandler} from '../../services/servicesAPI.js'
 
-export default function Form({liftSearchingItem}) {
+export default function Form({onSearch}) {
   const [showFields, setShowFields] = useState("random");
-  const [currentSerching, setCurrentSerching] =  useState();
-  // const [search, setSearch] =  useState();
-  const [searchingItem, setSearchingItem] = useState()
+  const [searchInput, setSearchInput] =  useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSearchingItem(currentSerching)
+    if (showFields === "categories") onSearch('/random?category=' + searchInput)
+    if (showFields === "random") onSearch('/random')
+    if (showFields === "search") onSearch('/search?query=' + searchInput)
   };
 
   return (
@@ -43,7 +43,7 @@ export default function Form({liftSearchingItem}) {
         <span>From categories</span>
       </label>
       {showFields === "categories" ? (
-        <Categories liftCategory={(value) => setCurrentSerching("/random?category=" + value)} />
+        <Categories liftCategory={(value) => setSearchInput( value)} />
       ) : (
         null
       )}
@@ -58,9 +58,9 @@ export default function Form({liftSearchingItem}) {
         <span></span>
         <span>Search</span>
       </label>
-      {showFields === "search" ? <Search liftSearch={(value) => setCurrentSerching("/search?query=" +  value)}/> : null}
+      {showFields === "search" ? <Search liftSearch={(value) => setSearchInput( value)}/> : null}
 
-      <GetJoke />
+      <GetJoke/>
     </form>
   );
 }

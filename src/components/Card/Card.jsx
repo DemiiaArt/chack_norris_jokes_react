@@ -1,32 +1,52 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./Card.scss";
 import IconHeartBtn from '../Buttons/IconHeartBtn.jsx'
+import jokeIcon from "./jokeIcon.png"
+import getFromLocalStorage,{ addToLocalStorage }  from '../../services/servisecLocalStorage.js'
+import { useLikedJokes } from '../../context/LikedJokesContext.js'
 
-export default function Card() {
+
+export default function Card({joke}, mini = false) {
+  // const [isLiked, setIsLiked] = useState(false)
+  const { addLikedJoke, removeLikedJoke } = useLikedJokes();
+
+  const handleLikeClick = (value) => {
+    if (value) {
+      joke.liked = true
+      addLikedJoke(joke);
+    } else {
+      joke.leked=false
+      removeLikedJoke(joke);
+    }
+  };
+  // console.log(joke);
+
+  let nowDate = new Date().getTime();
+  let updateDate = Date.parse(joke.updated_at);
+  let lastUpdate = Math.floor((nowDate - updateDate) / (1000 * 60 * 60))
   return (
-    <li className="card">
+    <li className={mini ? 'card card--mini' : 'card'}>
       <div className="jokeIcon">
-        <img src="./img/jokeIcon.png" alt="joke icon" width="20" height="18" />
+        <img src={jokeIcon} alt="joke icon" width="20" height="18" />
       </div>
       <div className="card__body">
         <p>
           ID:
-          <a href="/">
-            XNaAxUduSw6zANDaIEab7A <span className="icon-link"></span>
+          <a href={"https://api.chucknorris.io/jokes/" + joke.id}>
+            {joke.id}<span className="icon-link"></span>
           </a>
         </p>
         <p className="joke">
-          No one truly knows who's Chuck Norris' real father. No one is
-          biologically strong enough for this. He must've conceived himself.
+          {joke.value}
         </p>
         <div className="card__info">
           <p>
-            Last update: <span>1923 hours ago</span>
+            Last update: <span>{lastUpdate}</span> hours ago
           </p>
-          <span className="tag">celebrity</span>
+          {(joke.categories || !mini) && (joke.categories.map((cat, index) => <span key={index} className="tag">{cat}</span>))}
         </div>
       </div>
-      <IconHeartBtn />
+      <IconHeartBtn jokeLiked ={joke.liked} liftLike={value =>  handleLikeClick(value)}/>
     </li>
   );
 }
