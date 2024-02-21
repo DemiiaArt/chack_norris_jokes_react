@@ -1,26 +1,21 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import "./Favourites.scss";
-import getFromLocalStorage from "../services/servisecLocalStorage.js";
 import Card from "../components/Card/Card";
-// import { useLikedJokes } from '../context/LikedJokesContext.js'
+import { useLikedJokes } from "../context/LikedJokesContext.js";
 
-export default function Favourites() {
-  const [storageItems, setStorageItems] = useState(
-    getFromLocalStorage("likedJokes")
-  );
+export default function Favourites({ iOpen }) {
+  const { likedJokes } = useLikedJokes();
 
-  useEffect(()=> {
-    setStorageItems( getFromLocalStorage("likedJokes"))
-  }, [])
-  
   return (
-    <div className="backdrop ">
+    <div className={iOpen ? "backdrop isOpen" : "backdrop"}>
       <div className="burger">
         <div className="container">
+          <span className="favouriteHeader">Favourite</span>
           <ul id="likedJokesList">
-            {storageItems.map((joke) => (
-              <Card key={joke.id} joke={joke} mini={true} />
-            ))}
+            {likedJokes.length > 0 &&
+              likedJokes.map((joke) => (
+                <Card key={joke.id} joke={joke} mini={true} />
+              ))}
           </ul>
         </div>
       </div>

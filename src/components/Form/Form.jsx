@@ -1,19 +1,19 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import "./Form.scss";
 import Categories from "./Categories.jsx";
 import Search from "./Search.jsx";
 import GetJoke from "../Buttons/GetJoke.jsx";
-// import {submitHandler} from '../../services/servicesAPI.js'
 
-export default function Form({onSearch}) {
+export default function Form({ onSearch }) {
   const [showFields, setShowFields] = useState("random");
-  const [searchInput, setSearchInput] =  useState('');
+  const [searchInput, setSearchInput] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (showFields === "categories") onSearch('/random?category=' + searchInput)
-    if (showFields === "random") onSearch('/random')
-    if (showFields === "search") onSearch('/search?query=' + searchInput)
+    if (showFields === "categories")
+      onSearch("/random?category=" + searchInput);
+    if (showFields === "random") onSearch("/random");
+    if (showFields === "search") onSearch("/search?query=" + searchInput);
   };
 
   return (
@@ -43,10 +43,8 @@ export default function Form({onSearch}) {
         <span>From categories</span>
       </label>
       {showFields === "categories" ? (
-        <Categories liftCategory={(value) => setSearchInput( value)} />
-      ) : (
-        null
-      )}
+        <Categories liftCategory={(value) => setSearchInput(value)} />
+      ) : null}
       <label>
         <input
           type="radio"
@@ -58,9 +56,11 @@ export default function Form({onSearch}) {
         <span></span>
         <span>Search</span>
       </label>
-      {showFields === "search" ? <Search liftSearch={(value) => setSearchInput( value)}/> : null}
+      {showFields === "search" ? (
+        <Search liftSearch={(value) => setSearchInput(value)} />
+      ) : null}
 
-      <GetJoke/>
+      <GetJoke />
     </form>
   );
 }

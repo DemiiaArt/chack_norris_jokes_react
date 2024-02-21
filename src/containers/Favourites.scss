@@ -1,0 +1,106 @@
+@import '../style/variables.scss';
+
+.backdrop {
+    position: absolute;
+    display: flex;
+    flex-direction: row-reverse;
+    inset: 0;
+    // pointer-events: none;
+    right: 0;
+    width: 0;
+
+    .burger {
+        position: relative;
+        right: 0;
+        background: $lite_bg;
+        height: fit-content;
+        min-height: 100vh;
+        padding-top: 40px;
+        opacity: 0;
+        color: $text_lite;
+        font-weight: 500;
+
+        width: 0;
+        transition: width 100ms ease-in-out;
+
+        #likedJokesList {
+            padding-top: 48px;
+        }
+
+        .favouriteHeader {
+            visibility: hidden;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .backdrop {
+        background: $backdrop_bg;
+
+        .burger {
+            width: 60vw;
+            height: 100%;
+            top: 0;
+            right: 0;
+            transition: all 500ms ease-in-out;
+
+            #likedJokesList {
+                padding-top: 48px;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .backdrop {
+        position: static;
+        transform: translateX(0);
+        background: none;
+        width: fit-content;
+        flex-grow: 1;
+
+        .burger {
+            width: 100%;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            // height: fit-content;
+            opacity: 1;
+            transform: translateX(0);
+            overflow-y: auto;
+
+            .favouriteHeader {
+                visibility: visible;
+            }
+        }
+    }
+}
+
+
+.backdrop {
+    &.isOpen {
+        width: 100%;
+
+        .burger {
+            opacity: 1;
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .backdrop.isOpen {
+        .burger {
+            width: 60vw;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .backdrop.isOpen {
+
+        .burger {
+            width: 100%;
+        }
+    }
+}

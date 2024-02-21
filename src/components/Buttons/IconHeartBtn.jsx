@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./IconHeartBtn.scss";
 
-export default function IconHeartBtn({jokeLiked, liftLike }) {
+export default function IconHeartBtn({ jokeLiked, liftLike }) {
   const [like, setLike] = useState(jokeLiked);
 
   const handleChengeLike = () => {
@@ -9,6 +9,11 @@ export default function IconHeartBtn({jokeLiked, liftLike }) {
     setLike(updatedLike);
     liftLike(updatedLike);
   };
+
+  useEffect(() => {
+    setLike(jokeLiked);
+  }, [jokeLiked]);
+
   return (
     <button
       onClick={handleChengeLike}
