@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.d04a4909.css",
-    "main.js": "/static/js/main.08f33734.js",
-    "static/media/bg.webp": "/static/media/bg.e6bc76c54e9b45d725c0.webp",
-    "static/media/Roboto-Medium.woff": "/static/media/Roboto-Medium.e624b10d53c919bd7496.woff",
-    "static/media/Roboto-Bold.woff": "/static/media/Roboto-Bold.9fa4a8113c081e9b3138.woff",
-    "static/media/Roboto-Regular.woff": "/static/media/Roboto-Regular.0944be1093c62cedb919.woff",
-    "static/media/Roboto-Medium.woff2": "/static/media/Roboto-Medium.57b8a81c7519e4d6b555.woff2",
-    "static/media/Roboto-Bold.woff2": "/static/media/Roboto-Bold.b21da07c934a28b2fef3.woff2",
-    "static/media/Roboto-Regular.woff2": "/static/media/Roboto-Regular.9d43b86421e004e704b9.woff2",
-    "static/media/icomoon.svg?cnvq5t": "/static/media/icomoon.ea5acb497bfa77646b8c.svg",
-    "static/media/icomoon.eot?cnvq5t": "/static/media/icomoon.bcf1bc2a680e6b196be7.eot",
-    "static/media/icomoon.woff?cnvq5t": "/static/media/icomoon.4bff02161695f4c353ec.woff",
-    "static/media/icomoon.ttf?cnvq5t": "/static/media/icomoon.195e797e6900887e45ee.ttf",
-    "index.html": "/index.html",
-    "main.d04a4909.css.map": "/static/css/main.d04a4909.css.map",
-    "main.08f33734.js.map": "/static/js/main.08f33734.js.map"
+    "main.css": "/chack_norris_jokes_react/static/css/main.482f5889.css",
+    "main.js": "/chack_norris_jokes_react/static/js/main.08f33734.js",
+    "static/media/bg.webp": "/chack_norris_jokes_react/static/media/bg.e6bc76c54e9b45d725c0.webp",
+    "static/media/Roboto-Medium.woff": "/chack_norris_jokes_react/static/media/Roboto-Medium.e624b10d53c919bd7496.woff",
+    "static/media/Roboto-Bold.woff": "/chack_norris_jokes_react/static/media/Roboto-Bold.9fa4a8113c081e9b3138.woff",
+    "static/media/Roboto-Regular.woff": "/chack_norris_jokes_react/static/media/Roboto-Regular.0944be1093c62cedb919.woff",
+    "static/media/Roboto-Medium.woff2": "/chack_norris_jokes_react/static/media/Roboto-Medium.57b8a81c7519e4d6b555.woff2",
+    "static/media/Roboto-Bold.woff2": "/chack_norris_jokes_react/static/media/Roboto-Bold.b21da07c934a28b2fef3.woff2",
+    "static/media/Roboto-Regular.woff2": "/chack_norris_jokes_react/static/media/Roboto-Regular.9d43b86421e004e704b9.woff2",
+    "static/media/icomoon.svg?cnvq5t": "/chack_norris_jokes_react/static/media/icomoon.ea5acb497bfa77646b8c.svg",
+    "static/media/icomoon.eot?cnvq5t": "/chack_norris_jokes_react/static/media/icomoon.bcf1bc2a680e6b196be7.eot",
+    "static/media/icomoon.woff?cnvq5t": "/chack_norris_jokes_react/static/media/icomoon.4bff02161695f4c353ec.woff",
+    "static/media/icomoon.ttf?cnvq5t": "/chack_norris_jokes_react/static/media/icomoon.195e797e6900887e45ee.ttf",
+    "index.html": "/chack_norris_jokes_react/index.html",
+    "main.482f5889.css.map": "/chack_norris_jokes_react/static/css/main.482f5889.css.map",
+    "main.08f33734.js.map": "/chack_norris_jokes_react/static/js/main.08f33734.js.map"
   },
   "entrypoints": [
-    "static/css/main.d04a4909.css",
+    "static/css/main.482f5889.css",
     "static/js/main.08f33734.js"
   ]
 }
