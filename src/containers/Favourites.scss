@@ -60,11 +60,10 @@
         flex-grow: 1;
 
         .burger {
-            width: 100%;
+            width: 500px;
             position: sticky;
             top: 0;
             height: 100vh;
-            // height: fit-content;
             opacity: 1;
             transform: translateX(0);
             overflow-y: auto;
@@ -76,6 +75,13 @@
     }
 }
 
+@media (min-width: 1280px) {
+    .backdrop {
+        .burger {
+            width: 700px;
+        }
+    }
+}
 
 .backdrop {
     &.isOpen {
